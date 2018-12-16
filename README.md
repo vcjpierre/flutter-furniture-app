@@ -1,6 +1,12 @@
-# flutter_testing
+# Flutter Furniture App
 
 A new Flutter project.
+
+## Screenshots
+<p align="center">
+  <img src="https://raw.github.com/vcjpierre/flutter-furniture-app/master/assets/screenshots/Screenshot_1544919770.png" height="600em"/>  
+  <img src="https://raw.github.com/vcjpierre/flutter-furniture-app/master/assets/screenshots/Screenshot_1544919773.png" height="600em"/> 
+</p>
 
 ## Getting Started
 
