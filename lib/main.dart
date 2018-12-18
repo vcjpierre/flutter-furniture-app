@@ -13,7 +13,6 @@ class SocialApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Delivery',
       theme: ThemeData(
-        fontFamily: 'Josefin',
         primarySwatch: Colors.yellow,
       ),
       home: SocialHome(),

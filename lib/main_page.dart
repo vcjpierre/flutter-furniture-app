@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './product.dart';
 import './home.dart';
 import './user.dart';
+import './cart.dart';
 
 class SocialHome extends StatefulWidget {
   static String tag = 'ana-sayfa';
@@ -18,9 +19,9 @@ class _SocialHomeState extends State<SocialHome> {
         backgroundColor: Colors.white,
         body: TabBarView(
           children: <Widget>[
-            new HomePage(),            
-            new Container(color: Colors.yellow),
-            new ProductPage(),
+            new HomePage(),  
+            new ProductPage(),          
+            new CartPage(),            
             new UserPage(),
           ],
         ),
