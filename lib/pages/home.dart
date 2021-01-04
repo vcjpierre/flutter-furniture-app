@@ -5,9 +5,9 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
-
-   int getColorHexFromStr(String colorStr) {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  int getColorHexFromStr(String colorStr) {
     colorStr = "FF" + colorStr;
     colorStr = colorStr.replaceAll("#", "");
     int val = 0;
@@ -78,13 +78,14 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                             height: 50.0,
                             width: 50.0,
                             decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25.0),
-                                border: Border.all(
-                                    color: Colors.white,
-                                    style: BorderStyle.solid,
-                                    width: 2.0),
-                                image: DecorationImage(
-                                    image: AssetImage('assets/images/chris.jpg'))),
+                              borderRadius: BorderRadius.circular(25.0),
+                              border: Border.all(
+                                  color: Colors.white,
+                                  style: BorderStyle.solid,
+                                  width: 2.0),
+                              image: DecorationImage(
+                                  image: AssetImage('assets/images/chris.jpg')),
+                            ),
                           ),
                           SizedBox(
                               width: MediaQuery.of(context).size.width - 120.0),
@@ -104,7 +105,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       Padding(
                         padding: EdgeInsets.only(left: 15.0),
                         child: Text(
-                          'Hello , Jean',
+                          'Hello Jean',
                           style: TextStyle(
                               fontFamily: 'Quicksand',
                               fontSize: 30.0,
@@ -129,18 +130,18 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                           elevation: 5.0,
                           borderRadius: BorderRadius.circular(5.0),
                           child: TextFormField(
-                              decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  prefixIcon: Icon(Icons.search,
-                                      color:
-                                          Color(getColorHexFromStr('#FEDF62')),
-                                      size: 30.0),
-                                  contentPadding:
-                                      EdgeInsets.only(left: 15.0, top: 15.0),
-                                  hintText: 'Search',
-                                  hintStyle: TextStyle(
-                                      color: Colors.grey,
-                                      fontFamily: 'Quicksand'))),
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              prefixIcon: Icon(Icons.search,
+                                  color: Color(getColorHexFromStr('#FEDF62')),
+                                  size: 30.0),
+                              contentPadding:
+                                  EdgeInsets.only(left: 15.0, top: 15.0),
+                              hintText: 'Search',
+                              hintStyle: TextStyle(
+                                  color: Colors.grey, fontFamily: 'Quicksand'),
+                            ),
+                          ),
                         ),
                       ),
                       SizedBox(height: 10.0)
@@ -166,13 +167,15 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                             Container(
                               height: 50.0,
                               decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage('assets/images/sofas.png'))),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/sofas.png'),
+                                ),
+                              ),
                             ),
                             Text(
                               'Sofas',
                               style: TextStyle(fontFamily: 'Quicksand'),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -184,9 +187,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                             Container(
                               height: 50.0,
                               decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image:
-                                          AssetImage('assets/images/wardrobe.png'))),
+                                image: DecorationImage(
+                                  image:
+                                      AssetImage('assets/images/wardrobe.png'),
+                                ),
+                              ),
                             ),
                             Text(
                               'Wardrobe',
@@ -203,13 +208,15 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                             Container(
                               height: 50.0,
                               decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage('assets/images/desks.png'))),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/images/desks.png'),
+                                ),
+                              ),
                             ),
                             Text(
                               'Desk',
                               style: TextStyle(fontFamily: 'Quicksand'),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -221,14 +228,16 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                             Container(
                               height: 50.0,
                               decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image:
-                                          AssetImage('assets/images/dressers.png'))),
+                                image: DecorationImage(
+                                  image:
+                                      AssetImage('assets/images/dressers.png'),
+                                ),
+                              ),
                             ),
                             Text(
                               'Dresser',
                               style: TextStyle(fontFamily: 'Quicksand'),
-                            )
+                            ),
                           ],
                         ),
                       )
@@ -259,8 +268,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               width: 140.0,
               height: 150.0,
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(imgPath), fit: BoxFit.cover)),
+                image: DecorationImage(
+                    image: AssetImage(imgPath), fit: BoxFit.cover),
+              ),
             ),
             SizedBox(width: 4.0),
             Column(
@@ -338,7 +348,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 )
               ],

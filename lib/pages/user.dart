@@ -5,9 +5,9 @@ class UserPage extends StatefulWidget {
   _UserPageState createState() => _UserPageState();
 }
 
-class _UserPageState extends State<UserPage> with SingleTickerProviderStateMixin {
-
-int getColorHexFromStr(String colorStr) {
+class _UserPageState extends State<UserPage>
+    with SingleTickerProviderStateMixin {
+  int getColorHexFromStr(String colorStr) {
     colorStr = "FF" + colorStr;
     colorStr = colorStr.replaceAll("#", "");
     int val = 0;
@@ -100,7 +100,7 @@ int getColorHexFromStr(String colorStr) {
                               fontFamily: 'Quicksand',
                               fontSize: 15.0,
                               color: Colors.black.withOpacity(0.7)),
-                        )
+                        ),
                       ],
                     ),
                     SizedBox(width: MediaQuery.of(context).size.width - 225.0),
@@ -136,7 +136,7 @@ int getColorHexFromStr(String colorStr) {
                                 fontSize: 15.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -156,7 +156,7 @@ int getColorHexFromStr(String colorStr) {
                                 fontSize: 15.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -176,7 +176,7 @@ int getColorHexFromStr(String colorStr) {
                                 fontSize: 15.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -196,7 +196,7 @@ int getColorHexFromStr(String colorStr) {
                                 fontSize: 15.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
-                          )
+                          ),
                         ],
                       ),
                     )
@@ -208,31 +208,37 @@ int getColorHexFromStr(String colorStr) {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        cardDetails('Pending payment', 'assets/images/card.png', '5'),
-                        cardDetails('To be shipped', 'assets/images/box.png', '2'),
+                        cardDetails(
+                            'Pending payment', 'assets/images/card.png', '5'),
+                        cardDetails(
+                            'To be shipped', 'assets/images/box.png', '2'),
                       ],
                     ),
                     SizedBox(height: 10.0),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        cardDetails('To be received', 'assets/images/trucks.png', '8'),
                         cardDetails(
-                            'Return / Replace', 'assets/images/returnbox.png', '0'),
+                            'To be received', 'assets/images/trucks.png', '8'),
+                        cardDetails('Return / Replace',
+                            'assets/images/returnbox.png', '0'),
                       ],
                     ),
                     SizedBox(height: 5.0)
                   ],
-                )
+                ),
               ],
             )
           ]),
           SizedBox(height: 15.0),
           listItem('Gift card', Colors.red, Icons.account_box),
-          listItem('Bank card', Color(getColorHexFromStr('#E89300')), Icons.credit_card),
-          listItem('Replacement code', Color(getColorHexFromStr('#FB8662')), Icons.grid_on),
+          listItem('Bank card', Color(getColorHexFromStr('#E89300')),
+              Icons.credit_card),
+          listItem('Replacement code', Color(getColorHexFromStr('#FB8662')),
+              Icons.grid_on),
           listItem('Consulting collection', Colors.blue, Icons.pages),
-          listItem('Customer service', Color(getColorHexFromStr('#ECB800')), Icons.person)
+          listItem('Customer service', Color(getColorHexFromStr('#ECB800')),
+              Icons.person)
         ])
       ]),
     );
@@ -247,14 +253,9 @@ int getColorHexFromStr(String colorStr) {
             height: 50.0,
             width: 50.0,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25.0),
-              color: buttonColor.withOpacity(0.3)
-            ),
-            child: Icon(
-              iconButton,
-              color: buttonColor,
-              size: 25.0
-            ),
+                borderRadius: BorderRadius.circular(25.0),
+                color: buttonColor.withOpacity(0.3)),
+            child: Icon(iconButton, color: buttonColor, size: 25.0),
           ),
           SizedBox(width: 25.0),
           Container(
@@ -262,19 +263,15 @@ int getColorHexFromStr(String colorStr) {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(title,
-                style: TextStyle(
-                  fontFamily: 'Quicksand',
-                  fontSize: 15.0,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold
+                Text(
+                  title,
+                  style: TextStyle(
+                      fontFamily: 'Quicksand',
+                      fontSize: 15.0,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
                 ),
-                ),
-                Icon(
-              Icons.arrow_forward_ios,
-              color: Colors.black,
-              size: 20.0
-            )
+                Icon(Icons.arrow_forward_ios, color: Colors.black, size: 20.0),
               ],
             ),
           ),
@@ -308,23 +305,27 @@ int getColorHexFromStr(String colorStr) {
             SizedBox(height: 2.0),
             Padding(
               padding: EdgeInsets.only(left: 15.0),
-              child: Text(title,
-                  style: TextStyle(
-                    fontFamily: 'Quicksand',
-                    fontSize: 15.0,
-                    color: Colors.black,
-                  )),
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontFamily: 'Quicksand',
+                  fontSize: 15.0,
+                  color: Colors.black,
+                ),
+              ),
             ),
             SizedBox(height: 3.0),
             Padding(
               padding: EdgeInsets.only(left: 15.0),
-              child: Text(valueCount,
-                  style: TextStyle(
-                      fontFamily: 'Quicksand',
-                      fontSize: 15.0,
-                      color: Colors.red,
-                      fontWeight: FontWeight.bold)),
-            )
+              child: Text(
+                valueCount,
+                style: TextStyle(
+                    fontFamily: 'Quicksand',
+                    fontSize: 15.0,
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
           ],
         ),
       ),
