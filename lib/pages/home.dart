@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -23,7 +25,7 @@ class _HomePageState extends State<HomePage>
         // a..f
         val += (hexDigit - 87) * (1 << (4 * (len - 1 - i)));
       } else {
-        throw new FormatException("An error occurred when converting a color");
+        throw FormatException("An error occurred when converting a color");
       }
     }
     return val;
@@ -50,21 +52,26 @@ class _HomePageState extends State<HomePage>
                       height: 400.0,
                       width: 400.0,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(200.0),
-                          color: Color(getColorHexFromStr('#FEE16D'))
-                              .withOpacity(0.4)),
+                        borderRadius: BorderRadius.circular(200.0),
+                        color: Color(
+                          getColorHexFromStr('#FEE16D'),
+                        ).withValues(alpha: 0.4),
+                      ),
                     ),
                   ),
                   Positioned(
                     bottom: 100.0,
                     left: 150.0,
                     child: Container(
-                        height: 300.0,
-                        width: 300.0,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(150.0),
-                            color: Color(getColorHexFromStr('#FEE16D'))
-                                .withOpacity(0.5))),
+                      height: 300.0,
+                      width: 300.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(150.0),
+                        color: Color(
+                          getColorHexFromStr('#FEE16D'),
+                        ).withValues(alpha: 0.5),
+                      ),
+                    ),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,15 +87,16 @@ class _HomePageState extends State<HomePage>
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25.0),
                               border: Border.all(
-                                  color: Colors.white,
-                                  style: BorderStyle.solid,
-                                  width: 2.0),
+                                color: Colors.white,
+                                style: BorderStyle.solid,
+                                width: 2.0,
+                              ),
                               image: DecorationImage(
-                                  image: AssetImage('assets/images/chris.jpg')),
+                                image: AssetImage('assets/images/chris.jpg'),
+                              ),
                             ),
                           ),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width - 120.0),
+                          const Spacer(),
                           Container(
                             alignment: Alignment.topRight,
                             child: IconButton(
@@ -107,9 +115,10 @@ class _HomePageState extends State<HomePage>
                         child: Text(
                           'Hello Jean',
                           style: TextStyle(
-                              fontFamily: 'Quicksand',
-                              fontSize: 30.0,
-                              fontWeight: FontWeight.bold),
+                            fontFamily: 'Quicksand',
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                       SizedBox(height: 15.0),
@@ -118,9 +127,10 @@ class _HomePageState extends State<HomePage>
                         child: Text(
                           'What do you want to buy?',
                           style: TextStyle(
-                              fontFamily: 'Quicksand',
-                              fontSize: 23.0,
-                              fontWeight: FontWeight.bold),
+                            fontFamily: 'Quicksand',
+                            fontSize: 23.0,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                       SizedBox(height: 25.0),
@@ -132,21 +142,27 @@ class _HomePageState extends State<HomePage>
                           child: TextFormField(
                             decoration: InputDecoration(
                               border: InputBorder.none,
-                              prefixIcon: Icon(Icons.search,
-                                  color: Color(getColorHexFromStr('#FEDF62')),
-                                  size: 30.0),
-                              contentPadding:
-                                  EdgeInsets.only(left: 15.0, top: 15.0),
+                              prefixIcon: Icon(
+                                Icons.search,
+                                color: Color(getColorHexFromStr('#FEDF62')),
+                                size: 30.0,
+                              ),
+                              contentPadding: EdgeInsets.only(
+                                left: 15.0,
+                                top: 15.0,
+                              ),
                               hintText: 'Search',
                               hintStyle: TextStyle(
-                                  color: Colors.grey, fontFamily: 'Quicksand'),
+                                color: Colors.grey,
+                                fontFamily: 'Quicksand',
+                              ),
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 10.0)
+                      SizedBox(height: 10.0),
                     ],
-                  )
+                  ),
                 ],
               ),
               SizedBox(height: 10.0),
@@ -154,8 +170,9 @@ class _HomePageState extends State<HomePage>
                 children: <Widget>[
                   SizedBox(height: 10.0),
                   Material(
-                      elevation: 1.0,
-                      child: Container(height: 75.0, color: Colors.white)),
+                    elevation: 1.0,
+                    child: Container(height: 75.0, color: Colors.white),
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
@@ -188,15 +205,16 @@ class _HomePageState extends State<HomePage>
                               height: 50.0,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image:
-                                      AssetImage('assets/images/wardrobe.png'),
+                                  image: AssetImage(
+                                    'assets/images/wardrobe.png',
+                                  ),
                                 ),
                               ),
                             ),
                             Text(
                               'Wardrobe',
                               style: TextStyle(fontFamily: 'Quicksand'),
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -229,8 +247,9 @@ class _HomePageState extends State<HomePage>
                               height: 50.0,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image:
-                                      AssetImage('assets/images/dressers.png'),
+                                  image: AssetImage(
+                                    'assets/images/dressers.png',
+                                  ),
                                 ),
                               ),
                             ),
@@ -240,16 +259,16 @@ class _HomePageState extends State<HomePage>
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
               itemCard('FinnNavian', 'assets/images/ottoman.jpg', false),
               itemCard('FinnNavian', 'assets/images/anotherchair.jpg', true),
-              itemCard('FinnNavian', 'assets/images/chair.jpg', true)
+              itemCard('FinnNavian', 'assets/images/chair.jpg', true),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -269,90 +288,103 @@ class _HomePageState extends State<HomePage>
               height: 150.0,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(imgPath), fit: BoxFit.cover),
+                  image: AssetImage(imgPath),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             SizedBox(width: 4.0),
-            Column(
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Text(
-                      title,
-                      style: TextStyle(
-                          fontFamily: 'Quicksand',
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(width: 45.0),
-                    Material(
-                      elevation: isFavorite ? 0.0 : 2.0,
-                      borderRadius: BorderRadius.circular(20.0),
-                      child: Container(
-                        height: 40.0,
-                        width: 40.0,
-                        decoration: BoxDecoration(
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Text(
+                          title,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Quicksand',
+                            fontSize: 17.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 8.0),
+                      Material(
+                        elevation: isFavorite ? 0.0 : 2.0,
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Container(
+                          height: 40.0,
+                          width: 40.0,
+                          decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20.0),
                             color: isFavorite
-                                ? Colors.grey.withOpacity(0.2)
-                                : Colors.white),
-                        child: Center(
-                          child: isFavorite
-                              ? Icon(Icons.favorite_border)
-                              : Icon(Icons.favorite, color: Colors.red),
+                                ? Colors.grey.withValues(alpha: 0.2)
+                                : Colors.white,
+                          ),
+                          child: Center(
+                            child: isFavorite
+                                ? Icon(Icons.favorite_border)
+                                : Icon(Icons.favorite, color: Colors.red),
+                          ),
                         ),
                       ),
-                    )
-                  ],
-                ),
-                SizedBox(height: 5.0),
-                Container(
-                  width: 175.0,
-                  child: Text(
+                    ],
+                  ),
+                  SizedBox(height: 5.0),
+                  Text(
                     'Scandinavian small sized double sofa imported full leather / Dale Italia oil wax leather black',
                     textAlign: TextAlign.left,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                        fontFamily: 'Quicksand',
-                        color: Colors.grey,
-                        fontSize: 12.0),
+                      fontFamily: 'Quicksand',
+                      color: Colors.grey,
+                      fontSize: 12.0,
+                    ),
                   ),
-                ),
-                SizedBox(height: 5.0),
-                Row(
-                  children: <Widget>[
-                    SizedBox(width: 35.0),
-                    Container(
-                      height: 40.0,
-                      width: 50.0,
-                      color: Color(getColorHexFromStr('#F9C335')),
-                      child: Center(
-                        child: Text(
-                          '\$248',
-                          style: TextStyle(
+                  SizedBox(height: 5.0),
+                  Row(
+                    children: <Widget>[
+                      Spacer(),
+                      Container(
+                        height: 40.0,
+                        width: 50.0,
+                        color: Color(getColorHexFromStr('#F9C335')),
+                        child: Center(
+                          child: Text(
+                            '\$248',
+                            style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    Container(
-                      height: 40.0,
-                      width: 100.0,
-                      color: Color(getColorHexFromStr('#FEDD59')),
-                      child: Center(
-                        child: Text(
-                          'Add to cart',
-                          style: TextStyle(
+                      Container(
+                        height: 40.0,
+                        width: 100.0,
+                        color: Color(getColorHexFromStr('#FEDD59')),
+                        child: Center(
+                          child: Text(
+                            'Add to cart',
+                            style: TextStyle(
                               color: Colors.white,
                               fontFamily: 'Quicksand',
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                )
-              ],
-            )
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
